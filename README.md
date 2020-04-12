@@ -1,2 +1,4 @@
 # coa-sanity
-COA backend rebuild using Sanity.io
+COA backend migration from Wordpress to Sanity.io
+
+
