@@ -109,7 +109,8 @@ export default {
         {type: "imageFull"},
         {type: "gallery"},
         {type: "video"},
-        {type: "googleMyMap"}
+        {type: "googleMyMap"},
+        {type: 'instagramPost'},
       ]
     }
   ],
