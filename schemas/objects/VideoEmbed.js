@@ -6,16 +6,6 @@ export default {
   type: "object",
   fields: [
     {
-      title: "Source",
-      name: "source",
-      type: "string",
-      options: {
-        list: [{title: "YouTube", value: "youtube"}, {title: "Vimeo", value: "vimeo"}],
-        layout: "radio",
-        direction: "horizontal"
-      }
-    },
-    {
       title: "Url",
       name: "url",
       type: "url"
