@@ -20,6 +20,7 @@ import googleMyMap from './objects/Map'
 import menu from './objects/Menu'
 import menuItem from './objects/MenuItem'
 import igEmbed from './objects/InstagramEmbed'
+import videoEmbed from './objects/VideoEmbed'
 
 // Components
 
@@ -40,6 +41,7 @@ export default createSchema({
     imageFull,
     gallery,
     video,
+    videoEmbed,
     googleMyMap,
     menu,
     menuItem,

@@ -11,9 +11,7 @@ const InstagramPreview = ({ value }) => {
   return (
     <InstagramEmbed
       url={url}
-      maxWidth={480}
       containerTagName="div"
-      injectScript
     />
   )
 }

@@ -1,10 +1,22 @@
 import Article from 'react-icons/lib/go/repo'
+import External from 'react-icons/lib/fa/external-link'
+import Internal from 'react-icons/lib/md/link'
 
 export default {
   title: "Article",
   name: "article",
   icon: Article,
   type: "document",
+  fieldsets: [
+    {
+      title: "Details",
+      name: "details",
+      options: {
+        collapsible: true,
+        collapsed: false
+      }
+    }
+  ],
   fields: [
     {
       title: "Title",
@@ -25,18 +37,21 @@ export default {
     {
       title: "Author",
       name: "author",
+      fieldset: "details",
       type: "reference",
       to: [{type: "author"}]
     },
     {
       title: "Location",
       name: "location",
+      fieldset: 'details',
       type: "reference",
       to: [{type: "location"}]
     },
     {
       title: "Categories",
       name: "categories",
+      fieldset: 'details',
       type: "array",
       of: [
         {
@@ -56,6 +71,7 @@ export default {
     {
       title: "Featured Image",
       name: "featuredImage",
+      fieldset: "details",
       type: "imageFull",
     },
     {
@@ -77,6 +93,7 @@ export default {
                 name: 'link',
                 type: 'object',
                 title: 'External link',
+                icon: External,
                 fields: [
                   {
                     name: 'href',
@@ -93,6 +110,7 @@ export default {
               {
                 title: "Internal Link",
                 name: "internalLink",
+                icon: Internal,
                 type: "object",
                 fields: [
                   {
@@ -109,6 +127,7 @@ export default {
         {type: "imageFull"},
         {type: "gallery"},
         {type: "video"},
+        {type: "videoEmbed"},
         {type: "googleMyMap"},
         {type: 'instagramPost'},
       ]
