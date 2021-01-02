@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder"
-import Settings from 'react-icons/lib/go/settings'
+import {GoSettings as Settings} from 'react-icons/go'
 
 export default () => 
   S.list()

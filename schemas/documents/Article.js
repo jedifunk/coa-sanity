@@ -1,6 +1,6 @@
-import Article from 'react-icons/lib/go/repo'
-import External from 'react-icons/lib/fa/external-link'
-import Internal from 'react-icons/lib/md/link'
+import {GoRepo as Article} from 'react-icons/go'
+import {FaExternalLinkAlt as External} from 'react-icons/fa'
+import {MdLink as Internal} from 'react-icons/md'
 
 export default {
   title: "Article",

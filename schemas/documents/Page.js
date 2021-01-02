@@ -1,4 +1,4 @@
-import Page from 'react-icons/lib/go/file-text'
+import {GoFile as Page} from 'react-icons/go'
 
 export default {
   title: "Page",

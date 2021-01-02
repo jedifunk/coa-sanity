@@ -1,4 +1,4 @@
-import Person from 'react-icons/lib/md/person-pin'
+import {MdPersonPin as Person} from 'react-icons/md'
 
 export default {
   title: "Author",

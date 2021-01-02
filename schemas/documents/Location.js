@@ -1,4 +1,4 @@
-import Location from 'react-icons/lib/go/globe'
+import {GoGlobe as Location} from 'react-icons/go'
 
 export default {
   title: "Location",

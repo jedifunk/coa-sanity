@@ -1,4 +1,4 @@
-import Tag from 'react-icons/lib/fa/tag'
+import {FaTag as Tag} from 'react-icons/fa'
 
 export default {
   title: "Category",
