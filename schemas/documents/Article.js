@@ -35,6 +35,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Publish Date',
+      name: 'publishDate',
+      type: 'datetime',
+    },
+    {
       title: "Author",
       name: "author",
       fieldset: "details",
