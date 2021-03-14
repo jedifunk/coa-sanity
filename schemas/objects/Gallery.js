@@ -1,15 +1,15 @@
-import galleryPreview from '../../previews/GalleryPreview'
+//import galleryPreview from '../../previews/GalleryPreview'
 
 export default {
   title: "Image Gallery",
   name: "gallery",
   type: "object",
-  preview: {
-    select: {
-      images: "images"
-    },
-    component: galleryPreview
-  },
+  // preview: {
+  //   select: {
+  //     images: "images"
+  //   },
+  //   component: galleryPreview
+  // },
   fields: [
     {
       title: "Columns",

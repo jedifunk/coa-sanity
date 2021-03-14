@@ -5,6 +5,7 @@ import urlBuilder from '@sanity/image-url'
 const urlFor = source => urlBuilder(client).image(source)
 
 const galleryPreview = ({ value = {} }) => {
+  console.log(value)
   let wrapperStyles = {
     display: 'grid',
     gridTemplateColumns:'repeat(3, 1fr)'
