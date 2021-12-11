@@ -70,7 +70,8 @@ export default {
           }
         },
         {type: "image"},
-        {type: "gallery"}
+        {type: "gallery"},
+        {type: "mapbox"}
       ]
     }
   ]

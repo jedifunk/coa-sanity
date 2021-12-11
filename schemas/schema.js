@@ -9,7 +9,9 @@ import globalConfig from './documents/SiteSettings'
 import page from './documents/Page'
 import article from './documents/Article'
 import author from './documents/Author'
-import location from './documents/Location'
+import city from './documents/City'
+import place from './documents/Place'
+import country from './documents/Country'
 import category from './documents/Category'
 
 // Objects
@@ -21,6 +23,7 @@ import menu from './objects/Menu'
 import menuItem from './objects/MenuItem'
 import igEmbed from './objects/InstagramEmbed'
 import videoEmbed from './objects/VideoEmbed'
+import mapBox from './objects/Mapbox'
 
 // Components
 
@@ -36,7 +39,9 @@ export default createSchema({
     page,
     article,
     author,
-    location,
+    city,
+    place,
+    country,
     category,
     imageFull,
     gallery,
@@ -46,5 +51,6 @@ export default createSchema({
     menu,
     menuItem,
     igEmbed,
+    mapBox,
   ])
 })

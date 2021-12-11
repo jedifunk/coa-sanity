@@ -1,8 +1,8 @@
 import {GoGlobe as Location} from 'react-icons/go'
 
 export default {
-  title: "Location",
-  name: "location",
+  title: "Country",
+  name: "country",
   icon: Location,
   type: "document",
   fields: [
@@ -21,6 +21,17 @@ export default {
         slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
       },
       validation: Rule => Rule.required()
+    },
+    {
+      title: "ISO A3",
+      name: "isoA3",
+      type: "string"
+    },
+    {
+      title: "Include in Menu",
+      name: "menu",
+      description: "Will be included in menu list",
+      type: "boolean",
     },
     {
       title: "Image",

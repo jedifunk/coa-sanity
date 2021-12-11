@@ -15,6 +15,14 @@ export default {
         collapsible: true,
         collapsed: false
       }
+    },
+    {
+      title: "Geo",
+      name: "geo",
+      options: {
+        collapsible: true,
+        collapsed: false,
+      }
     }
   ],
   fields: [
@@ -30,7 +38,7 @@ export default {
       options: {
         source: 'title',
         maxLength: 200, // will be ignored if slugify is set
-        slugify: input => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+        slugify: input => input.toLowerCase().replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').slice(0, 200)
       },
       validation: Rule => Rule.required()
     },
@@ -47,11 +55,18 @@ export default {
       to: [{type: "author"}]
     },
     {
-      title: "Location",
-      name: "location",
-      fieldset: 'details',
+      title: "City",
+      name: "city",
+      fieldset: "geo",
       type: "reference",
-      to: [{type: "location"}]
+      to: [{type: "city"}]
+    },
+    {
+      title: "Country",
+      name: "country",
+      fieldset: 'geo',
+      type: "reference",
+      to: [{type: "country"}]
     },
     {
       title: "Categories",
@@ -140,7 +155,21 @@ export default {
   ],
   orderings: [
     {
-      title: 'Post Date, New',
+      title: 'Publish Date, Newest',
+      name: 'pubDateDesc',
+      by: [
+        {field: 'publishDate', direction: 'desc'}
+      ]
+    },
+    {
+      title: 'Publish Date, Oldest',
+      name: 'pubDateAsc',
+      by: [
+        {field: 'publishDate', direction: 'asc'}
+      ]
+    },
+    {
+      title: 'Post Date, Newest',
       name: 'postDateDesc',
       by: [
         {field: '_createdAt', direction: 'desc'}
@@ -151,17 +180,21 @@ export default {
     select: {
       title: "title",
       featuredImage: "featuredImage",
-      location: "location.name",
-      excerpt: "excerpt"
+      country: "country.name",
+      excerpt: "excerpt",
+      date: "publishDate",
     },
     prepare(selection) {
-      const {title, featuredImage, location, excerpt} = selection
+      const {title, featuredImage, country, date} = selection
+      const pubDate = new Date(date)
+      const pub = pubDate.toLocaleDateString(undefined, { year: 'numeric', month: '2-digit', day: '2-digit' })
+
       return {
         title: title,
-        subtitle: location,
-        description: excerpt,
+        subtitle: `Date: ${pub}`,
+        description: `Location: ${country}`,
         media: featuredImage
       }
-    }
+    },
   }
 }

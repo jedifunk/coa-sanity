@@ -15,6 +15,7 @@ export default {
       title: "Columns",
       name: "columns",
       type: "number",
+      initialValue: 3,
       validation: Rule => Rule.required().min(2).max(5)
     },
     {

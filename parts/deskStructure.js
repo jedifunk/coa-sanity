@@ -1,4 +1,4 @@
-import S from "@sanity/desk-tool/structure-builder"
+import S, { list, listItem } from "@sanity/desk-tool/structure-builder"
 import {GoSettings as Settings} from 'react-icons/go'
 
 export default () => 
@@ -19,5 +19,8 @@ export default () =>
         .filter(listItem => ['page', 'article'].includes(listItem.getId())),
       S.divider(),
       ...S.documentTypeListItems()
-        .filter(listItem => ['author', 'location', 'category'].includes(listItem.getId()))
+          .filter(listItem => ['place', 'city', 'country'].includes(listItem.getId())),
+      S.divider(),
+      ...S.documentTypeListItems()
+        .filter(listItem => ['category', 'author'].includes(listItem.getId()))
     ])

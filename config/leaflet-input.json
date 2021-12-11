@@ -1,0 +1,11 @@
+{
+  "tileLayer": {
+    "accessToken": "pk.eyJ1IjoiamVkaWZ1bmsiLCJhIjoiY2ttOGo0Y3Z2MThobzJvczNjZm4yaWc2dCJ9.6C8Npb2Zr9KUCkT8pq57RQ",
+    "id": "mapbox/streets-v11",
+    "tileSize": 512,
+    "maxZoom": 22,
+    "zoomOffset": -1,
+    "url": "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+    "attribution": "© <a href=\"https://www.mapbox.com/about/maps/\">Mapbox</a> © <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> <strong><a href=\"https://www.mapbox.com/map-feedback/\" target=\"_blank\">Improve this map</a></strong>"
+  }
+}
