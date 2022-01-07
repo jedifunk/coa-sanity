@@ -17,6 +17,7 @@
     "@sanity/base": "^2.23.0",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.23.0",
+    "@sanity/dashboard": "^2.23.3",
     "@sanity/default-layout": "^2.23.0",
     "@sanity/default-login": "^2.23.0",
     "@sanity/desk-tool": "^2.23.0",
@@ -29,6 +30,7 @@
     "react-instagram-embed": "^2.0.0",
     "react-player": "^2.9.0",
     "sanity-plugin-asset-source-unsplash": "^0.1.5",
+    "sanity-plugin-dashboard-widget-gatsby": "^1.0.9",
     "sanity-plugin-leaflet-input": "^1.0.1",
     "sanity-plugin-media": "^1.4.4",
     "styled-components": "^5.3.3"

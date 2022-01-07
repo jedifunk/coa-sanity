@@ -15,7 +15,9 @@
     "@sanity/desk-tool",
     "asset-source-unsplash",
     "media",
-    "leaflet-input"
+    "leaflet-input",
+    "@sanity/dashboard",
+    "dashboard-widget-gatsby"
   ],
   "env": {
     "development": {
@@ -32,6 +34,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./parts/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./parts/dashboardConfig"
     }
   ]
 }
