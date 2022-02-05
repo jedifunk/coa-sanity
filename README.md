@@ -7,5 +7,5 @@ Plugins in use:
 ### TODO
 - [ ] Add SEO options
 - [x] Unsplash integration
-- [x] IG embeds
+- [] IG embeds
 - [x] YouTube & Vimeo embeds
