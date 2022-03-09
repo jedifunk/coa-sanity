@@ -24,6 +24,7 @@ import menuItem from './objects/MenuItem'
 import igEmbed from './objects/InstagramEmbed'
 import videoEmbed from './objects/VideoEmbed'
 import mapBox from './objects/Mapbox'
+import quotation from './objects/Quotation'
 
 // Components
 
@@ -52,5 +53,6 @@ export default createSchema({
     menuItem,
     igEmbed,
     mapBox,
+    quotation,
   ])
 })

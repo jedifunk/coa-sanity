@@ -150,6 +150,7 @@ export default {
         {type: "videoEmbed"},
         {type: "googleMyMap"},
         {type: 'instagramPost'},
+        {type: 'quotation'},
       ]
     }
   ],
