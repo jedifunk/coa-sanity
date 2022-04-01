@@ -151,6 +151,7 @@ export default {
         {type: "googleMyMap"},
         {type: 'instagramPost'},
         {type: 'quotation'},
+        {type: 'break'},
       ]
     }
   ],

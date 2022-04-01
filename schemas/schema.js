@@ -25,6 +25,7 @@ import igEmbed from './objects/InstagramEmbed'
 import videoEmbed from './objects/VideoEmbed'
 import mapBox from './objects/Mapbox'
 import quotation from './objects/Quotation'
+import breaks from './objects/Breaks'
 
 // Components
 
@@ -54,5 +55,6 @@ export default createSchema({
     igEmbed,
     mapBox,
     quotation,
+    breaks,
   ])
 })
