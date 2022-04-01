@@ -7,5 +7,6 @@
   "sanity-plugin-mapbox-input": "57ae3a403ce6a070b31ec6fa1f3c8339cafa66661eaddba1d4d5ee3cc2197ec2",
   "mapbox-input": "57ae3a403ce6a070b31ec6fa1f3c8339cafa66661eaddba1d4d5ee3cc2197ec2",
   "sanity-plugin-leaflet-input": "719f6bf672040fa5af3485f155f7da339033b564cc0978f1249c274ddd26a483",
-  "leaflet-input": "719f6bf672040fa5af3485f155f7da339033b564cc0978f1249c274ddd26a483"
+  "leaflet-input": "719f6bf672040fa5af3485f155f7da339033b564cc0978f1249c274ddd26a483",
+  "@sanity/vision": "da5b6ed712703ecd04bf4df560570c668aa95252c6bc1c41d6df1bda9b8b8f60"
 }
