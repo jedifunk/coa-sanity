@@ -16,8 +16,7 @@
     "asset-source-unsplash",
     "media",
     "leaflet-input",
-    "@sanity/dashboard",
-    "dashboard-widget-gatsby"
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {

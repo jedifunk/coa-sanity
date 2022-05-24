@@ -6,15 +6,5 @@ export default {
     {
       name: 'project-info',
     },
-    {
-      name: 'gatsby',
-      options: {
-        sites: [
-          {
-            siteUrl: ''
-          }
-        ]
-      }
-    }
   ]
 }
