@@ -8,7 +8,7 @@ export default {
       name: 'horizontal',
       type: 'string',
       options: {
-        list: ['break']
+        list: ['break', 'small break']
       }
     }
   ]
