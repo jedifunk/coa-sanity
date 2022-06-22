@@ -9,6 +9,14 @@ export default {
       title: "Url",
       name: "url",
       type: "url"
+    },
+    {
+      title: 'Caption',
+      name: 'caption',
+      type: 'string',
+      options: {
+        isHighlighted: true
+      }
     }
   ],
   preview: {

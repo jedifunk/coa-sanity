@@ -5,16 +5,22 @@ import urlBuilder from '@sanity/image-url'
 const urlFor = source => urlBuilder(client).image(source)
 
 const galleryPreview = ({ value = {} }) => {
-  console.log(value)
+
+  const cols = value.columns
   let wrapperStyles = {
     display: 'grid',
-    gridTemplateColumns:'repeat(3, 1fr)'
+    gridTemplateColumns:`repeat(${cols}, 1fr)`,
+    gap: `10px`,
+    lineHeight: 0
   }
   let figureStyles = {
-    margin: '1rem'
+    margin: 0,
+    aspectRatio: `1/1`,
   }
   let figureImgStyles = {
-    maxWidth: '100%'
+    width: `100%`,
+    height: `100%`,
+    objectFit: `cover`
   }
 
   return (

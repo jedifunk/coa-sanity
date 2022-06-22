@@ -1,5 +1,3 @@
-import imagePreview from "../../previews/ImagePreview";
-
 export default {
   title: "Full Image",
   name: "imageFull",
@@ -25,5 +23,5 @@ export default {
         isHighlighted: true
       }
     }
-  ]
+  ],
 }
