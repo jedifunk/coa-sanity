@@ -148,6 +148,7 @@ export default {
         {type: "gallery"},
         {type: "video"},
         {type: "videoEmbed"},
+        {type: "embed"},
         {type: "googleMyMap"},
         {type: 'instagramPost'},
         {type: 'quotation'},

@@ -23,6 +23,7 @@ import menu from './objects/Menu'
 import menuItem from './objects/MenuItem'
 import igEmbed from './objects/InstagramEmbed'
 import videoEmbed from './objects/VideoEmbed'
+import embed from './objects/Embed'
 import mapBox from './objects/Mapbox'
 import quotation from './objects/Quotation'
 import breaks from './objects/Breaks'
@@ -49,6 +50,7 @@ export default createSchema({
     gallery,
     video,
     videoEmbed,
+    embed,
     googleMyMap,
     menu,
     menuItem,

@@ -72,7 +72,8 @@ export default {
         {type: "image"},
         {type: "gallery"},
         {type: "mapbox"},
-        {type: "break"}
+        {type: "break"},
+        {type: "embed"},
       ]
     }
   ]
