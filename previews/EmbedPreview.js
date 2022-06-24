@@ -2,7 +2,6 @@ import React from 'react'
 import getVideoId from 'get-video-id'
 
 const Embed = ({ value }) => {
-  const link = value.url
 
   let iFrameStyles = {
     width: '100%',
@@ -41,8 +40,13 @@ const Embed = ({ value }) => {
     }
   }
 
-  function chooseEmbedType(link) {
-    if (link.includes('spotify')) {
+  function chooseEmbedType(value) {
+    
+    const link = (value && value.url) ? value.url : ''
+
+    if (!link) {
+      return <span />
+    } else if (link.includes('spotify')) {
       let spotifyItem = link.split('https://open.spotify.com/')[1].split('?si')[0]
 
       let figStyle = {
@@ -62,10 +66,11 @@ const Embed = ({ value }) => {
     } else {
       getEmbedCode(value)
     }
+    return <></>
   }
 
   return (
-    chooseEmbedType(link)
+    chooseEmbedType(value)
   )
 }
 
