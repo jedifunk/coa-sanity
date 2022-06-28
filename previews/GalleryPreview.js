@@ -23,6 +23,10 @@ const galleryPreview = ({ value = {} }) => {
     objectFit: `cover`
   }
 
+  if (!value.images){
+    return <span />
+  }
+
   return (
     <div style={wrapperStyles}>
       {value &&
