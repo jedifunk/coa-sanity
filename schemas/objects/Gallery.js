@@ -9,7 +9,7 @@ export default {
       images: "images",
       columns: "columns"
     },
-    component: galleryPreview
+    //component: galleryPreview
   },
   fields: [
     {

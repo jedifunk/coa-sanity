@@ -2,7 +2,7 @@ import React from 'react'
 import client from 'part:@sanity/base/client'
 import urlBuilder from '@sanity/image-url'
 
-const urlFor = source => urlBuilder(client).image(source)
+//const urlFor = source => urlBuilder(client).image(source)
 
 const galleryPreview = ({ value = {} }) => {
 
@@ -28,9 +28,11 @@ const galleryPreview = ({ value = {} }) => {
   }
 
   return (
+    //<></>
     <div style={wrapperStyles}>
-      {value &&
+      {value.images &&
         value.images.map(image => (
+          //console.log(image)
           <figure key={image._key} style={figureStyles}>
             <img src={urlFor(image).url()} style={figureImgStyles}/>
           </figure>
