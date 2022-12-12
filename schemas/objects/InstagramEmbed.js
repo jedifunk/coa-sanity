@@ -13,6 +13,8 @@ export default {
   ],
   preview: {
     select: { url: "url" },
-    component: InstagramPreview
+    components: {
+      preview: InstagramPreview
+    }
   }
 }

@@ -1,5 +1,5 @@
-import { GrMapLocation as Pin } from 'react-icons/gr'
-import LeafletGeopointInput from 'sanity-plugin-leaflet-input'
+import { FaMapMarkerAlt as Pin } from 'react-icons/fa'
+//import LeafletGeopointInput from 'sanity-plugin-leaflet-input'
 
 export default {
   title: "Places",
@@ -29,12 +29,14 @@ export default {
       type: "reference",
       to: [{type: 'country'}]
     },
-    {
-      title: "Geo Location",
-      type: 'geopoint',
-      name: "geo",
-      inputComponent: LeafletGeopointInput,
-    },
+    // {
+    //   title: "Geo Location",
+    //   type: 'geopoint',
+    //   name: "geo",
+    //   components: {
+    //     input: LeafletGeopointInput
+    //   }
+    // },
     {
       title: "Website",
       name: "website",

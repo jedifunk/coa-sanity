@@ -1,7 +1,9 @@
 import React from 'react'
-import client from 'part:@sanity/base/client'
+//import client from 'part:@sanity/base/client'
+import {useClient} from 'sanity'
 import urlBuilder from '@sanity/image-url'
 
+const client = useClient()
 const urlFor = source => urlBuilder(client).image(source)
 
 const galleryPreview = ({ value = {} }) => {

@@ -11,17 +11,11 @@ export default {
       title: "Alt",
       name: "alt",
       type: "string",
-      options: {
-        isHighlighted: true
-      }
     },
     {
       title: "Caption",
       name: "caption",
       type: "string",
-      options: {
-        isHighlighted: true
-      }
     }
   ],
 }

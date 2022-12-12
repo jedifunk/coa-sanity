@@ -9,7 +9,8 @@ export default {
       type: 'string',
       options: {
         list: ['break', 'small break']
-      }
+      },
+      initialValue: 'break',
     }
   ]
 }
