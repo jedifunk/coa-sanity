@@ -1,11 +1,12 @@
 import React from 'react'
 
-const videoPreview = ({ value }) => {
+const vid = {width: '100%'}
+const videoPreview = (props) => {
 
   return (
     <figure className="wp-block-video aligncenter">
-      <video src={value.media} controls ></video>
-      <figcaption>{value.title}</figcaption>
+      <video style={vid} src={props?.url} controls ></video>
+      <figcaption>{props?.title}</figcaption>
     </figure>
   )
 }

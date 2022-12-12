@@ -17,12 +17,12 @@ export default {
   ],
   preview: {
     select: {
-      url: 'asset',
-      media: 'asset',
+      url: 'asset.url',
       title: 'caption'
     },
-    components: {
-      preview: videoPreview
-    }
   },
+  components: {
+    preview: videoPreview
+  }
+
 }

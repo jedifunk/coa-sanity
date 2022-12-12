@@ -1,14 +1,13 @@
 import React from 'react'
-//import client from 'part:@sanity/base/client'
 import {useClient} from 'sanity'
-import urlBuilder from '@sanity/image-url'
+import imageUrlBuilder from '@sanity/image-url'
 
-const client = useClient()
-const urlFor = source => urlBuilder(client).image(source)
+const galleryPreview = (props) => {
+console.log(props)
+  const client = useClient({apiVersion:"2021-10-21"})
+  const urlFor = (source) => imageUrlBuilder(client).image(source)
 
-const galleryPreview = ({ value = {} }) => {
-
-  const cols = value.columns
+  const cols = props.columns
   let wrapperStyles = {
     display: 'grid',
     gridTemplateColumns:`repeat(${cols}, 1fr)`,
@@ -25,14 +24,14 @@ const galleryPreview = ({ value = {} }) => {
     objectFit: `cover`
   }
 
-  if (!value.images){
-    return <span />
+  if (!props.images){
+    return <span>Add Images</span>
   }
 
   return (
     <div style={wrapperStyles}>
-      {value &&
-        value.images.map(image => (
+      {props &&
+        props.images.map(image => (
           <figure key={image._key} style={figureStyles}>
             <img src={urlFor(image).url()} style={figureImgStyles}/>
           </figure>
