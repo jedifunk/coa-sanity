@@ -74,6 +74,7 @@ export default {
         {type: "mapbox"},
         {type: "break"},
         {type: "embed"},
+        {type: "video"},
       ]
     }
   ]

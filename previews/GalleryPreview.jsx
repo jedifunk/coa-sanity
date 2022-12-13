@@ -3,7 +3,7 @@ import {useClient} from 'sanity'
 import imageUrlBuilder from '@sanity/image-url'
 
 const galleryPreview = (props) => {
-console.log(props)
+
   const client = useClient({apiVersion:"2021-10-21"})
   const urlFor = (source) => imageUrlBuilder(client).image(source)
 
@@ -30,10 +30,10 @@ console.log(props)
 
   return (
     <div style={wrapperStyles}>
-      {props &&
+      {props.images &&
         props.images.map(image => (
           <figure key={image._key} style={figureStyles}>
-            <img src={urlFor(image).url()} style={figureImgStyles}/>
+            {/* <img src={urlFor(image).url()} style={figureImgStyles}/> */}
           </figure>
         ))
       }
