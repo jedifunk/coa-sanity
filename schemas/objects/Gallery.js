@@ -4,15 +4,6 @@ export default {
   title: "Image Gallery",
   name: "gallery",
   type: "object",
-  preview: {
-    select: {
-      images: "images",
-      columns: "columns"
-    },
-  },
-  components: {
-    preview: galleryPreview
-  },
   fields: [
     {
       title: "Columns",
@@ -28,7 +19,16 @@ export default {
       of: [{type: "imageFull"}],
       options: {
         layout: "grid"
-      }
+      },
     }
-  ]
+  ],
+  preview: {
+    select: {
+      images: "images",
+      columns: "columns"
+    },
+  },
+  components: {
+    preview: galleryPreview
+  }
 }

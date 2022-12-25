@@ -69,7 +69,7 @@ export default {
             ]
           }
         },
-        {type: "image"},
+        {type: "imageFull"},
         {type: "gallery"},
         {type: "mapbox"},
         {type: "break"},

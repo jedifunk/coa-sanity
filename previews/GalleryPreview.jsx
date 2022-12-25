@@ -6,8 +6,10 @@ const galleryPreview = (props) => {
 
   const client = useClient({apiVersion:"2021-10-21"})
   const urlFor = (source) => imageUrlBuilder(client).image(source)
-
+  
+  const images = props.images
   const cols = props.columns
+  
   let wrapperStyles = {
     display: 'grid',
     gridTemplateColumns:`repeat(${cols}, 1fr)`,
@@ -24,16 +26,16 @@ const galleryPreview = (props) => {
     objectFit: `cover`
   }
 
-  if (!props.images){
+  if (!Array.isArray(images)){
     return <span>Add Images</span>
   }
 
   return (
     <div style={wrapperStyles}>
       {props.images &&
-        props.images.map(image => (
-          <figure key={image._key} style={figureStyles}>
-            {/* <img src={urlFor(image).url()} style={figureImgStyles}/> */}
+        props.images.map(image => (image.asset != null &&
+          <figure key={image._key} data-log={image._key} style={figureStyles}>
+            <img src={urlFor(image).url()} style={figureImgStyles}/>
           </figure>
         ))
       }
