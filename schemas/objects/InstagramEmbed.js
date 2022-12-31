@@ -1,4 +1,4 @@
-import InstagramPreview from "../../previews/InstagramPreview"
+//import InstagramPreview from "../../previews/InstagramPreview"
 
 export default {
   title: "Instagram Post",
@@ -11,10 +11,10 @@ export default {
       description: "Visit an Instagram post in a browser and copy the URL."
     }
   ],
-  preview: {
-    select: { url: "url" },
-    components: {
-      preview: InstagramPreview
-    }
-  }
+  // preview: {
+  //   select: { url: "url" },
+  //   components: {
+  //     preview: InstagramPreview
+  //   }
+  // }
 }
