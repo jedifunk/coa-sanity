@@ -21,6 +21,7 @@ import embed from './objects/Embed'
 import mapBox from './objects/Mapbox'
 import quotation from './objects/Quotation'
 import breaks from './objects/Breaks'
+import chart from './objects/Chart'
 
 export default [
   globalConfig,
@@ -43,4 +44,5 @@ export default [
   mapBox,
   quotation,
   breaks,
+  chart,
 ]

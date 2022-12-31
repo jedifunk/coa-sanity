@@ -75,6 +75,7 @@ export default {
         {type: "break"},
         {type: "embed"},
         {type: "video"},
+        {type: "chart"},
       ]
     }
   ]
