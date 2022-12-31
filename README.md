@@ -11,3 +11,4 @@ Plugins in use:
 - [ ] Make Charts reuseable
 - [ ] Make Mapbox maps reuseable
 - [x] YouTube & Vimeo embeds
+- [ ] Fix IG Embed preview error

@@ -153,6 +153,8 @@ export default {
         {type: 'instagramPost'},
         {type: 'quotation'},
         {type: 'break'},
+        {type: 'mapbox'},
+        {type: 'chart'},
       ]
     }
   ],
