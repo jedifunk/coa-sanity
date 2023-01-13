@@ -155,6 +155,7 @@ export default {
         {type: 'break'},
         {type: 'mapbox'},
         {type: 'chart'},
+        {type: 'contentGrid'},
       ]
     }
   ],

@@ -22,6 +22,7 @@ import mapBox from './objects/Mapbox'
 import quotation from './objects/Quotation'
 import breaks from './objects/Breaks'
 import chart from './objects/Chart'
+import grid from './objects/ContentGrid'
 
 export default [
   globalConfig,
@@ -45,4 +46,5 @@ export default [
   quotation,
   breaks,
   chart,
+  grid,
 ]

@@ -10,7 +10,17 @@ export default {
       name: "columns",
       type: "number",
       initialValue: 3,
-      validation: Rule => Rule.required().min(2).max(5)
+      validation: Rule => Rule.required().min(1).max(5)
+    },
+    {
+      title: "Grid Classname",
+      name: "gClass",
+      type: "string",
+    },
+    {
+      title: "CSS Params",
+      name: "cssParams",
+      type: "text",
     },
     {
       title: "Images",
@@ -22,13 +32,13 @@ export default {
       },
     }
   ],
-  preview: {
-    select: {
-      images: "images",
-      columns: "columns"
-    },
-  },
-  components: {
-    preview: galleryPreview
-  }
+  // preview: {
+  //   select: {
+  //     images: "images",
+  //     columns: "columns"
+  //   },
+  // },
+  // components: {
+  //   preview: galleryPreview
+  // }
 }
