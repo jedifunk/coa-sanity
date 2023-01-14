@@ -13,6 +13,15 @@ export default {
       validation: Rule => Rule.required().min(1).max(5)
     },
     {
+      title: "Images",
+      name: "images",
+      type: "array",
+      of: [{type: "imageFull"}],
+      options: {
+        layout: "grid"
+      },
+    },
+    {
       title: "Grid Classname",
       name: "gClass",
       type: "string",
@@ -22,15 +31,6 @@ export default {
       name: "cssParams",
       type: "text",
     },
-    {
-      title: "Images",
-      name: "images",
-      type: "array",
-      of: [{type: "imageFull"}],
-      options: {
-        layout: "grid"
-      },
-    }
   ],
   // preview: {
   //   select: {
