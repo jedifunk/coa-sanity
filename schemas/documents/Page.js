@@ -76,6 +76,7 @@ export default {
         {type: "embed"},
         {type: "video"},
         {type: "chart"},
+        {type: "quotation"},
       ]
     }
   ]

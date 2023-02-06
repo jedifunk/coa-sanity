@@ -7,7 +7,7 @@ Plugins in use:
 ### TODO
 - [ ] Add SEO options
 - [x] Unsplash integration
-- [] IG embeds
+- [ ] IG embeds
 - [ ] Make Charts reuseable
 - [ ] Make Mapbox maps reuseable
 - [x] YouTube & Vimeo embeds
