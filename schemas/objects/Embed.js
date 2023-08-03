@@ -21,8 +21,8 @@ export default {
       url: 'url',
       title: 'caption'
     },
-    components: {
-      preview: embedPreview
-    }
+  },
+  components: {
+    preview: embedPreview
   }
 }
