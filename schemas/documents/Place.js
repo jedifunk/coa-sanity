@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt as Pin } from 'react-icons/fa'
+import { FaMapLocationDot as Pin } from 'react-icons/fa6'
 //import LeafletGeopointInput from 'sanity-plugin-leaflet-input'
 
 export default {
