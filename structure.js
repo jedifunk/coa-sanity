@@ -1,4 +1,4 @@
-import {GoSettings as Settings} from 'react-icons/go'
+import {LuSettings2 as Settings} from 'react-icons/lu'
 
 export default (S) =>
   S.list()
