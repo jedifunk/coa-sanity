@@ -16,6 +16,8 @@ export default {
     select: {
       url: "url",
     },
-    component: MapPreview
+  },
+  components: {
+    preview: MapPreview
   }
 }

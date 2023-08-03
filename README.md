@@ -1,5 +1,5 @@
 # coa-sanity
-COA backend migration from Wordpress to Sanity.io
+COA backend powered by Sanity.io
 
 Plugins in use:
 - [media-library](https://www.sanity.io/plugins/sanity-plugin-media-library) for better image management
@@ -7,5 +7,8 @@ Plugins in use:
 ### TODO
 - [ ] Add SEO options
 - [x] Unsplash integration
-- [] IG embeds
+- [ ] IG embeds
+- [ ] Make Charts reuseable
+- [ ] Make Mapbox maps reuseable
 - [x] YouTube & Vimeo embeds
+- [ ] Fix IG Embed preview error

@@ -41,5 +41,3 @@ const galleryPreview = ({ value = {} }) => {
     </div>
   )
 }
-
-export default galleryPreview

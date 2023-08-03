@@ -1,7 +1,18 @@
+import Quotation from "../../previews/QuotePreview";
+
 export default {
   title: 'Quotation',
   name: 'quotation',
   type: 'object',
+  preview: {
+    select: {
+      quote: 'quote',
+      author: 'author'
+    }
+  },
+  components: {
+    preview: Quotation
+  },
   fields: [
     {
       title: 'Quote',

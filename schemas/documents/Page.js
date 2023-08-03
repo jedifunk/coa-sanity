@@ -69,11 +69,14 @@ export default {
             ]
           }
         },
-        {type: "image"},
+        {type: "imageFull"},
         {type: "gallery"},
         {type: "mapbox"},
         {type: "break"},
         {type: "embed"},
+        {type: "video"},
+        {type: "chart"},
+        {type: "quotation"},
       ]
     }
   ]

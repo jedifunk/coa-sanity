@@ -14,9 +14,6 @@ export default {
       title: 'Caption',
       name: 'caption',
       type: 'string',
-      options: {
-        isHighlighted: true
-      }
     }
   ],
   preview: {
@@ -24,6 +21,8 @@ export default {
       url: 'url',
       title: 'caption'
     },
-    component: embedPreview
+  },
+  components: {
+    preview: embedPreview
   }
 }

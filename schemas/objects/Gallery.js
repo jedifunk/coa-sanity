@@ -4,20 +4,13 @@ export default {
   title: "Image Gallery",
   name: "gallery",
   type: "object",
-  preview: {
-    select: {
-      images: "images",
-      columns: "columns"
-    },
-    //component: galleryPreview
-  },
   fields: [
     {
       title: "Columns",
       name: "columns",
       type: "number",
       initialValue: 3,
-      validation: Rule => Rule.required().min(2).max(5)
+      validation: Rule => Rule.required().min(1).max(5)
     },
     {
       title: "Images",
@@ -26,7 +19,26 @@ export default {
       of: [{type: "imageFull"}],
       options: {
         layout: "grid"
-      }
-    }
-  ]
+      },
+    },
+    {
+      title: "Grid Classname",
+      name: "gClass",
+      type: "string",
+    },
+    {
+      title: "CSS Params",
+      name: "cssParams",
+      type: "text",
+    },
+  ],
+  // preview: {
+  //   select: {
+  //     images: "images",
+  //     columns: "columns"
+  //   },
+  // },
+  // components: {
+  //   preview: galleryPreview
+  // }
 }

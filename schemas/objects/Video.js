@@ -1,4 +1,4 @@
-import videoPreview from "../../previews/VideoPreview";
+import videoPreview from "../../previews/VideoPreview"
 
 export default {
   title: "Video",
@@ -13,16 +13,16 @@ export default {
       title: "Caption",
       name: "caption",
       type: "string",
-      options: {
-        isHighlighted: true
-      }
     }
   ],
   preview: {
     select: {
-      url: 'asset',
+      url: 'asset.url',
       title: 'caption'
     },
-    component: videoPreview
+  },
+  components: {
+    preview: videoPreview
   }
+
 }

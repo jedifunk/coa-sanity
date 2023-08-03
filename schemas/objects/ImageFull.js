@@ -1,4 +1,6 @@
-export default {
+import { defineType, defineField } from "sanity"
+
+export default defineType({
   title: "Full Image",
   name: "imageFull",
   type: "image",
@@ -7,21 +9,15 @@ export default {
     hotspot: true,
   },
   fields: [
-    {
+    defineField({
       title: "Alt",
       name: "alt",
       type: "string",
-      options: {
-        isHighlighted: true
-      }
-    },
-    {
+    }),
+    defineField({
       title: "Caption",
       name: "caption",
       type: "string",
-      options: {
-        isHighlighted: true
-      }
-    }
+    })
   ],
-}
+})
