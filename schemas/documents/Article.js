@@ -1,5 +1,5 @@
 import {GoRepo as Article} from 'react-icons/go'
-import {FaExternalLinkAlt as External} from 'react-icons/fa'
+import {TbExternalLink as External} from 'react-icons/tb'
 import {MdLink as Internal} from 'react-icons/md'
 
 export default {

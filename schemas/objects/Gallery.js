@@ -32,13 +32,13 @@ export default {
       type: "text",
     },
   ],
-  // preview: {
-  //   select: {
-  //     images: "images",
-  //     columns: "columns"
-  //   },
-  // },
-  // components: {
-  //   preview: galleryPreview
-  // }
+  preview: {
+    select: {
+      images: "images",
+      columns: "columns"
+    },
+  },
+  components: {
+    preview: galleryPreview
+  }
 }

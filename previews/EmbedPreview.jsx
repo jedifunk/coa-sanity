@@ -1,7 +1,7 @@
 import React from 'react'
 import getVideoId from 'get-video-id'
 
-const Embed = ({ value }) => {
+const Embed = ( props ) => {
 
   let iFrameStyles = {
     width: '100%',
@@ -9,68 +9,65 @@ const Embed = ({ value }) => {
     aspectRatio: '16/9'
   }
 
-  function getEmbedCode(value) {
-    const videoId = (value && value.url) ? getVideoId(value.url) : ''
+  let figStyle = {
+    margin: '0'
+  }
+  let figCap = {
+    fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Liberation Sans",Helvetica,Arial,system-ui,sans-serif',
+    fontWeight: '600',
+    fontSize: '.8125rem'
+  }
+
+  function getEmbedCode(props) {
+    const videoId = (props && props.url) ? getVideoId(props.url) : ''
 
     if (!videoId) {
-      return <span />
-    }
-
-    switch (videoId.service) {
-      case 'youtube': {
-        return <iframe style={iFrameStyles} src={`https://www.youtube.com/embed/${videoId.id}?rel=0`} frameBorder="0" allowFullScreen />
-      }
-
-      case 'vimeo': {
-        return (
+      return (<div>Add Video</div>)
+    } else if (videoId.service === 'youtube') {
+      return (
+        <figure style={figStyle}>
+          <iframe style={iFrameStyles} src={`https://www.youtube.com/embed/${videoId.id}?rel=0`} frameBorder="0" allowFullScreen />
+          <figcaption style={figCap}>{props.title}</figcaption>
+        </figure>
+      )
+    } else {
+      return (
+        <figure style={figStyle}>
           <iframe
             style={iFrameStyles}
             src={`https://player.vimeo.com/video/${videoId.id}`}
             width="640"
             frameBorder="0"
-            webkitallowfullscreen
-            mozallowfullscreen
             allowFullScreen
           />
-        )
-      }
-      default: {
-        return <span>Unsupported video service: {videoId.service}</span>
-      }
+          <figcaption style={figCap}>{props.title}</figcaption>
+        </figure>
+      )
     }
   }
 
-  function chooseEmbedType(value) {
+  function chooseEmbedType(props) {
     
-    const link = (value && value.url) ? value.url : ''
+    const link = (props && props.url) ? props.url : ''
 
     if (!link) {
-      return <span />
+      return (<div>Add Link</div>)
     } else if (link.includes('spotify')) {
       let spotifyItem = link.split('https://open.spotify.com/')[1].split('?si')[0]
 
-      let figStyle = {
-        margin: '0'
-      }
-      let figCap = {
-        fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Liberation Sans",Helvetica,Arial,system-ui,sans-serif',
-        fontWeight: '600',
-        fontSize: '.8125rem'
-      }
       return (
         <figure style={figStyle}>
           <iframe src={`https://open.spotify.com/embed/${spotifyItem}?utm_source=generator&theme=0`} width="100%" height="80" frameBorder="0"></iframe>
-          <figcaption style={figCap}>{value.title}</figcaption>
+          <figcaption style={figCap}>{props.title}</figcaption>
         </figure>
       )
     } else {
-      getEmbedCode(value)
+      return getEmbedCode(props)
     }
-    return <></>
   }
 
   return (
-    chooseEmbedType(value)
+    chooseEmbedType(props)
   )
 }
 

@@ -7,12 +7,11 @@ const galleryPreview = (props) => {
   const client = useClient({apiVersion:"2021-10-21"})
   const urlFor = (source) => imageUrlBuilder(client).image(source)
   
-  const images = props.images
-  const cols = props.columns
+  const {images, columns} = props
   
   let wrapperStyles = {
     display: 'grid',
-    gridTemplateColumns:`repeat(${cols}, 1fr)`,
+    gridTemplateColumns:`repeat(${columns}, 1fr)`,
     gap: `10px`,
     lineHeight: 0
   }
@@ -26,16 +25,16 @@ const galleryPreview = (props) => {
     objectFit: `cover`
   }
 
-  if (!Array.isArray(images)){
-    return <span>Add Images</span>
+  if (typeof images === 'undefined' || (images && images.length > 0 && !images[0].asset)){
+    return (<div>No Images Yet</div>)
   }
 
   return (
     <div style={wrapperStyles}>
-      {props.images &&
-        props.images.map(image => (image.asset != null &&
+      {images &&
+        images.map(image => (image.asset != null &&
           <figure key={image._key} data-log={image._key} style={figureStyles}>
-            <img src={urlFor(image).url()} style={figureImgStyles}/>
+            <img src={urlFor(image).url()} style={figureImgStyles} alt={image.alt}/>
           </figure>
         ))
       }

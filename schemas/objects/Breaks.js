@@ -1,3 +1,5 @@
+import BreakPreview from '../../previews/BreakPreview'
+
 export default {
   title: 'Break',
   name: 'break',
@@ -8,9 +10,18 @@ export default {
       name: 'horizontal',
       type: 'string',
       options: {
-        list: ['break', 'small break']
+        list: [
+          {title: 'Full Break', value: 'break'}, 
+          {title: 'Half Break', value: 'small break'}
+        ]
       },
       initialValue: 'break',
     }
-  ]
+  ],
+  preview: {
+    select: {horizontal: 'horizontal'},
+  },
+  components: {
+    preview: BreakPreview
+  }
 }

@@ -1,4 +1,6 @@
 import {GoFile as Page} from 'react-icons/go'
+import {TbExternalLink as External} from 'react-icons/tb'
+import {MdLink as Internal} from 'react-icons/md'
 
 export default {
   title: "Page",
@@ -40,6 +42,7 @@ export default {
                 name: 'link',
                 type: 'object',
                 title: 'External link',
+                icon: External,
                 fields: [
                   {
                     name: 'href',
@@ -57,6 +60,7 @@ export default {
                 title: "Internal Link",
                 name: "internalLink",
                 type: "object",
+                icon: Internal,
                 fields: [
                   {
                     title: "Reference",
