@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MapPreview = ({ value }) => {
-  const { url } = value
-
+const MapPreview = ( props ) => {
+  const { url } = props
+console.log(url)
   if (!url) {
     return (<div>Forgot the URL?</div>)
   }
