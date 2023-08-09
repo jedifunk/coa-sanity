@@ -4,7 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 
 const galleryPreview = (props) => {
 
-  const client = useClient({apiVersion:"2021-10-21"})
+  const client = useClient({apiVersion:"2023-08-09"})
   const urlFor = (source) => imageUrlBuilder(client).image(source)
   
   const {images, columns} = props
