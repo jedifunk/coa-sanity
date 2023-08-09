@@ -202,5 +202,11 @@ export default {
         media: featuredImage
       }
     },
-  }
+  },
+  initialValue: () => ({
+    author: {
+      _ref: "9087aa86-9534-4778-8d4a-f3744fa9b9e5",
+      _type: "reference"
+    },
+  })
 }
