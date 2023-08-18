@@ -29,14 +29,11 @@ export default {
       type: "reference",
       to: [{type: 'country'}]
     },
-    // {
-    //   title: "Geo Location",
-    //   type: 'geopoint',
-    //   name: "geo",
-    //   components: {
-    //     input: LeafletGeopointInput
-    //   }
-    // },
+    {
+      title: "Geo Location",
+      type: 'geopoint',
+      name: "geo",
+    },
     {
       title: "Website",
       name: "website",
