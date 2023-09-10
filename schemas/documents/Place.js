@@ -1,5 +1,5 @@
 import { FaMapLocationDot as Pin } from 'react-icons/fa6'
-//import LeafletGeopointInput from 'sanity-plugin-leaflet-input'
+import Geometry from '../../components/input/Geometry'
 
 export default {
   title: "Places",
@@ -11,6 +11,51 @@ export default {
       title: "Name",
       name: "name",
       type: "string"
+    },
+    {
+      title: 'Geometry',
+      name: 'geometry',
+      type: 'object',
+      fields: [
+        {
+          title: 'Lookup',
+          name: 'geoName',
+          type: 'string',
+        },
+        {
+          title: 'Latitude',
+          name: 'latitude',
+          type: 'number'
+        },
+        {
+          title: 'Longitude',
+          name: 'longitude',
+          type: 'number'
+        },
+        {
+          title: 'Map Bounds',
+          name: 'mapBounds',
+          type: 'object',
+          hidden: true,
+          fields: [
+            {
+              title: 'northeast',
+              name: 'northeast',
+              type: 'array',
+              of: [{type: 'number'}]
+            },
+            {
+              title: 'Southwest',
+              name: 'southwest',
+              type: 'array',
+              of: [{type: 'number'}]
+            }
+          ]
+        }
+      ],
+      components: {
+        input: Geometry
+      }
     },
     {
       title: "Address",
@@ -28,11 +73,6 @@ export default {
       name: "country",
       type: "reference",
       to: [{type: 'country'}]
-    },
-    {
-      title: "Geo Location",
-      type: 'geopoint',
-      name: "geo",
     },
     {
       title: "Website",

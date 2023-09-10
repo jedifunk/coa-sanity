@@ -13,8 +13,8 @@ const devOnlyPlugins = [visionTool()]
 export default defineConfig({
   name: 'coa-sanity',
   title: 'Choosing Our Adventure',
-  projectId: '8icb2evz',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET,
   plugins: [
     deskTool({structure: deskStructure}),
     media(),
