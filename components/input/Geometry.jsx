@@ -3,14 +3,15 @@ import { useFormValue, set, unset } from 'sanity'
 import { Autocomplete, Box, TextInput, Flex, Label, Stack, Card, Text } from '@sanity/ui'
 import {AiOutlineSearch} from 'react-icons/ai'
 
+const GM_KEY = process.env.SANITY_STUDIO_GMAP_KEY
+
 const Geometry = (props) => {
   const docType = useFormValue(['_type'])
   const { value, onChange } = props
   const [predictions, setPredictions] = useState([])
 
-  const handleAutoChange = useCallback((e) => {
-    const nextValue = e
-    fetchCoordinates(nextValue)
+  const handleSelect = useCallback((e) => {
+    fetchCoordinates(e)
   })
 
   const handleChange = useCallback((newValue) => {
@@ -19,13 +20,16 @@ const Geometry = (props) => {
         'geoName': newValue.name, 
         'latitude': newValue.geometry.location.lat, 
         'longitude': newValue.geometry.location.lng,
-        'mapBounds': {'northeast': [newValue.geometry.viewport.northeast.lng, newValue.geometry.viewport.northeast.lat], 'southwest': [newValue.geometry.viewport.southwest.lng, newValue.geometry.viewport.southwest.lat]}
+        'mapBounds': {
+          'northeast': [newValue.geometry.viewport.northeast.lng, newValue.geometry.viewport.northeast.lat], 
+          'southwest': [newValue.geometry.viewport.southwest.lng, newValue.geometry.viewport.southwest.lat]
+        }
       }
     ) : unset())
   }, [onChange])
 
   const handleSearch = async (query) => {
-    const fetchQuery = docType === 'city' ? `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&radius=50000&types=(cities)&key=AIzaSyBXkg5BIZ8UWhUbz7_TDn46o6KDJX10l6I` : `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&radius=50000&key=AIzaSyBXkg5BIZ8UWhUbz7_TDn46o6KDJX10l6I`
+    const fetchQuery = docType === 'city' ? `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&radius=50000&types=(cities)&key=${GM_KEY}` : `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&radius=50000&key=${GM_KEY}`
     
     try {
       const response = await fetch(fetchQuery)
@@ -33,8 +37,11 @@ const Geometry = (props) => {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
       const data = await response.json()
-      const formattedResults = data.predictions.map(prediction => ({ value: prediction.description, ...prediction }))
-
+      const formattedResults = data.predictions.map(prediction => ({ 
+        value: prediction.place_id, 
+        name: prediction.structured_formatting.main_text ,
+        description: prediction.description
+      }))
       setPredictions(formattedResults)
     } catch (error) {
       console.error('Error fetching suggestions:', error);
@@ -43,14 +50,15 @@ const Geometry = (props) => {
 
   const fetchCoordinates = async (location) => {
     if (location !== undefined) {
-      await fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${location}&inputtype=textquery&fields=name,geometry,type&key=AIzaSyBXkg5BIZ8UWhUbz7_TDn46o6KDJX10l6I`)
+      await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${location}&fields=name,geometry,type,place_id&key=${GM_KEY}`)
       .then(response => response.json())
       .then(data => {
-        const coors = data.candidates[0]
-
+        const coors = data.result
         handleChange(coors)
       })
       .catch(error => console.error('fetchCoordinates:', error))
+    } else {
+      console.log('Nope')
     }
   }
 
@@ -59,18 +67,19 @@ const Geometry = (props) => {
       <Stack space={4}>
         <Box>
           <Autocomplete
-            // {...elementProps}
             icon={AiOutlineSearch}
             id="geoName"
+            radius={0}
             options={predictions}
+            filterOption={() => true}
             onQueryChange={handleSearch}
-            value={value ? value.geoName : ''}
-            onChange={handleAutoChange}
+            value={value?.geoName}
+            onSelect={handleSelect}
             renderOption={(option) => (
               <Card as="button" padding={3}>
                 <Stack space={3}>
-                  <Text>{option.structured_formatting.main_text}</Text>
-                  <Text size={1}>{option.description}</Text>
+                  <Text>{option.name}</Text>
+                  <Text size={1}>{option.description} | ID:{option.value}</Text>
                 </Stack>
               </Card>
             )}
