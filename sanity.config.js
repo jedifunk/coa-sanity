@@ -28,9 +28,9 @@ export default defineConfig({
           sites: [
             {
               title: 'Astro FrontEnd',
-              apiId: 'd5ace7ff-4f90-445a-aa41-c6b30f4fbb7c',
-              buildHookId: '63b2b463d043e642e11330be',
-              name: 'moonlit-rabanadas-b38d49',
+              apiId: process.env.NETLIFY_API_ID,
+              buildHookId: process.env.NETLIFY_BUILD_ID,
+              name: process.env.NETLIFY_NAME,
               //url: 'https://my-sanity-deployment.com'
             },
           ]
