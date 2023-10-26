@@ -28,9 +28,9 @@ export default defineConfig({
           sites: [
             {
               title: 'Astro FrontEnd',
-              apiId: process.env.NETLIFY_API_ID,
-              buildHookId: process.env.NETLIFY_BUILD_ID,
-              name: process.env.NETLIFY_NAME,
+              apiId: process.env.SANITY_STUDIO_NETLIFY_API_ID,
+              buildHookId: process.env.SANITY_STUDIO_NETLIFY_BUILD_ID,
+              name: process.env.SANITY_STUDIO_NETLIFY_NAME,
               //url: 'https://my-sanity-deployment.com'
             },
           ]
