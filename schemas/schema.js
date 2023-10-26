@@ -7,6 +7,7 @@ import city from './documents/City'
 import place from './documents/Place'
 import country from './documents/Country'
 import category from './documents/Category'
+import maps from './documents/Maps'
 
 // Objects
 import imageFull from './objects/ImageFull'
@@ -32,6 +33,7 @@ export default [
   city,
   place,
   country,
+  maps,
   category,
   imageFull,
   gallery,

@@ -17,7 +17,7 @@ export default (S) =>
       .filter(listItem => ['page', 'article'].includes(listItem.getId())),
     S.divider(),
     ...S.documentTypeListItems()
-        .filter(listItem => ['place', 'city', 'country'].includes(listItem.getId())),
+        .filter(listItem => ['place', 'city', 'country', 'map'].includes(listItem.getId())),
     S.divider(),
     ...S.documentTypeListItems()
       .filter(listItem => ['category', 'author'].includes(listItem.getId()))

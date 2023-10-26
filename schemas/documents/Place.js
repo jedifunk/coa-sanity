@@ -1,8 +1,8 @@
-import { FaMapLocationDot as Pin } from 'react-icons/fa6'
+import { TbMapPin as Pin } from 'react-icons/tb'
 import Geometry from '../../components/input/Geometry'
 
 export default {
-  title: "Places",
+  title: "Place",
   name: "place",
   type: "document",
   icon: Pin,
