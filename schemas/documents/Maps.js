@@ -55,6 +55,17 @@ export default {
       },
     },
     {
+      title: 'Place Types',
+      name: 'includeTypes',
+      description: 'Include Place Types',
+      type: 'boolean',
+      initialValue: false,
+      options: {
+        layout: 'checkbox',
+      },
+      hidden: ({document}) => {return !(document.layers && document.layers.includes('places'))},
+    },
+    {
       title: 'Initial Zoom',
       name: 'zoomTo',
       description: 'Set initial zoom?',

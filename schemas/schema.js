@@ -5,6 +5,7 @@ import article from './documents/Article'
 import author from './documents/Author'
 import city from './documents/City'
 import place from './documents/Place'
+import placeType from './documents/PlaceType'
 import country from './documents/Country'
 import category from './documents/Category'
 import maps from './documents/Maps'
@@ -32,6 +33,7 @@ export default [
   author,
   city,
   place,
+  placeType,
   country,
   maps,
   category,

@@ -1,5 +1,6 @@
 import { TbMapPin as Pin } from 'react-icons/tb'
 import Geometry from '../../components/input/Geometry'
+import PlaceType from './PlaceType'
 
 export default {
   title: "Place",
@@ -56,6 +57,13 @@ export default {
       components: {
         input: Geometry
       }
+    },
+    {
+      title: 'Place Type',
+      name: 'placeType',
+      type: "reference",
+      to: [{type: "placeType"}],
+      validation: Rule => Rule.required(),
     },
     {
       title: "Address",

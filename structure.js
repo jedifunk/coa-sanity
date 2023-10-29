@@ -20,5 +20,5 @@ export default (S) =>
         .filter(listItem => ['place', 'city', 'country', 'map'].includes(listItem.getId())),
     S.divider(),
     ...S.documentTypeListItems()
-      .filter(listItem => ['category', 'author'].includes(listItem.getId()))
+      .filter(listItem => ['category', 'author', 'placeType'].includes(listItem.getId()))
   ])
