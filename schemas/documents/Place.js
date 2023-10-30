@@ -83,6 +83,11 @@ export default {
       to: [{type: 'country'}]
     },
     {
+      title: 'Favorite',
+      name: 'favorite',
+      type: 'boolean',
+    },
+    {
       title: "Website",
       name: "website",
       type: "url"
