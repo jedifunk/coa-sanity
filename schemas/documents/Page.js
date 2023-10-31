@@ -30,6 +30,12 @@ export default {
       type: "imageFull"
     },
     {
+      title: 'Sidebar',
+      name: 'sidebar',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       title: "Content",
       name: "content",
       type: "array",
