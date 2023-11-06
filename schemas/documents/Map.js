@@ -12,14 +12,14 @@ export default {
       type: 'string'
     },
     {
-      title: 'Custom Map',
-      name: 'customMap',
-      description: 'Does this map need custom code?',
-      type: 'boolean',
-      initialValue: false,
-      options: {
-        layout: 'checkbox',
-      },
+      title: 'Data Attribute',
+      name: 'mapAttr',
+      type: 'string',
+    },
+    {
+      title: 'Custom Query',
+      name: 'customQuery',
+      type: 'string',
     },
     {
       title: 'Layers',
@@ -45,31 +45,19 @@ export default {
       }
     },
     {
-      title: 'Query All',
-      name: 'queryAll',
-      description: 'Get all countries, cities and places',
-      type: 'boolean',
-      initialValue: false,
-      options: {
-        layout: 'checkbox',
-      },
-    },
-    {
-      title: 'Place Types',
-      name: 'includeTypes',
-      description: 'Include Place Types',
-      type: 'boolean',
-      initialValue: false,
-      options: {
-        layout: 'checkbox',
-      },
-      hidden: ({document}) => {return !(document.layers && document.layers.includes('places'))},
-    },
-    {
       title: 'Initial Zoom',
       name: 'zoomTo',
       description: 'Set initial zoom?',
       type: 'boolean',
+      initialValue: false,
+      options: {
+        layout: 'checkbox',
+      },
+    },
+    {
+      name: 'hasToggles',
+      type: 'boolean',
+      description: 'Include filter buttons?',
       initialValue: false,
       options: {
         layout: 'checkbox',
@@ -84,13 +72,6 @@ export default {
         type: 'reference',
         to: [{type: 'place'}]
       }],
-      hidden: ({document}) => document?.customMap == true,
     },
-    {
-      title: 'Data Attribute',
-      name: 'mapAttr',
-      type: 'string',
-      hidden: ({document}) => document?.customMap !== true,
-    },
-  ]
+  ],
 }

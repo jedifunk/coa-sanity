@@ -8,7 +8,7 @@ import place from './documents/Place'
 import placeType from './documents/PlaceType'
 import country from './documents/Country'
 import category from './documents/Category'
-import maps from './documents/Maps'
+import map from './documents/Map'
 
 // Objects
 import imageFull from './objects/ImageFull'
@@ -35,7 +35,7 @@ export default [
   place,
   placeType,
   country,
-  maps,
+  map,
   category,
   imageFull,
   gallery,

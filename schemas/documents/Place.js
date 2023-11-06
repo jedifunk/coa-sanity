@@ -1,6 +1,5 @@
 import { TbMapPin as Pin } from 'react-icons/tb'
 import Geometry from '../../components/input/Geometry'
-import PlaceType from './PlaceType'
 
 export default {
   title: "Place",
