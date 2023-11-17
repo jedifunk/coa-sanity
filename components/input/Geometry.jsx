@@ -35,17 +35,30 @@ const Geometry = (props) => {
 
   const handleChange = useCallback((newValue) => {
 
-    onChange(newValue ? set(
-      {
+    if (newValue) {
+      let viewportValues = Object.values(newValue.geometry.viewport);
+      let northeast, southwest;
+
+      if (viewportValues[0].hi > viewportValues[0].lo) {
+        northeast = viewportValues[0];
+        southwest = viewportValues[1];
+      } else {
+        northeast = viewportValues[1];
+        southwest = viewportValues[0];
+      }
+
+      onChange(set({
         'geoName': newValue.name, 
         'latitude': newValue.geometry.location.lat(), 
         'longitude': newValue.geometry.location.lng(),
         'mapBounds': {
-          'northeast': [newValue.geometry.viewport.Oa.hi, newValue.geometry.viewport.mb.hi], 
-          'southwest': [newValue.geometry.viewport.Oa.lo, newValue.geometry.viewport.mb.lo]
+          'northeast': [northeast.hi, northeast.lo], 
+          'southwest': [southwest.hi, southwest.lo]
         }
-      }
-    ) : unset())
+      }));
+    } else {
+      onChange(unset());
+    }
   }, [onChange])
 
   const handleSearch = async (query) => {
