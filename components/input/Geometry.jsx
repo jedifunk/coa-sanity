@@ -1,33 +1,63 @@
 import React, {useState, useCallback, useRef, useEffect} from 'react'
-import { useFormValue, set, unset } from 'sanity'
+import { set, unset } from 'sanity'
 import { Autocomplete, Box, TextInput, Flex, Label, Stack, Card, Text } from '@sanity/ui'
 import {AiOutlineSearch} from 'react-icons/ai'
 
 const GM_KEY = process.env.SANITY_STUDIO_GMAP_KEY
 
+function useIsMounted() {
+  const isMounted = useRef(false);
+  useEffect(() => {
+    isMounted.current = true;
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+  return useCallback(() => isMounted.current, []);
+}
+
 const Geometry = (props) => {
-  const docType = useFormValue(['_type'])
   const { value, onChange } = props
   const [predictions, setPredictions] = useState([])
 
   const autocompleteService = useRef()
   const placesService = useRef()
+  const isMounted = useIsMounted()
 
   useEffect(() => {
-    loadGoogleMapsApi()
-  }, [])
+    if (!autocompleteService.current || !placesService.current) {
+      loadGoogleMapsApi();
+    }
+  }, []);
 
   const loadGoogleMapsApi = () => {
-    const script = document.createElement('script')
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places`
-    script.async = true
-    script.defer = true
+    if (window.google && window.google.maps) {
+      autocompleteService.current = new window.google.maps.places.AutocompleteService();
+      placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'));
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places`;
+    script.async = true;
+    script.defer = true;
     script.onload = () => {
-      autocompleteService.current = new window.google.maps.places.AutocompleteService()
-      placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'))
+      if (isMounted.current) {
+        autocompleteService.current = new window.google.maps.places.AutocompleteService()
+        placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'))
+      }
     }
     document.body.appendChild(script)
   }
+
+  useEffect(() => {
+    return () => {
+      const script = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]');
+      if (script) {
+        script.remove();
+      }
+    };
+  }, [])
 
   const handleSelect = useCallback((e) => {
     fetchCoordinates(e)
