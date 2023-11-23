@@ -67,23 +67,19 @@ const Geometry = (props) => {
 
     if (newValue) {
       let viewportValues = Object.values(newValue.geometry.viewport);
-      let northeast, southwest;
-
-      if (viewportValues[0].hi > viewportValues[0].lo) {
-        northeast = viewportValues[0];
-        southwest = viewportValues[1];
-      } else {
-        northeast = viewportValues[1];
-        southwest = viewportValues[0];
-      }
+      let lats = viewportValues[0]
+      let lngs = viewportValues[1]
+      // setting the bounding box, in LngLat since that is what Mapbox uses
+      const ne = [lngs.hi, lats.hi]
+      const sw = [lngs.lo, lats.lo]
 
       onChange(set({
         'geoName': newValue.name, 
         'latitude': newValue.geometry.location.lat(), 
         'longitude': newValue.geometry.location.lng(),
         'mapBounds': {
-          'northeast': [northeast.hi, northeast.lo], 
-          'southwest': [southwest.hi, southwest.lo]
+          'northeast': ne,
+          'southwest': sw,
         }
       }));
     } else {
