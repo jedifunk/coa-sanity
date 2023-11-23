@@ -1,4 +1,4 @@
-//import InstagramPreview from "../../previews/InstagramPreview"
+//import InstagramPreview from "../../components/preview/InstagramPreview"
 
 export default {
   title: "Instagram Post",

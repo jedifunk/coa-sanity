@@ -1,4 +1,4 @@
-import videoEmbedPreview from '../../previews/VideoEmbedPreview'
+import videoEmbedPreview from '../../components/preview/VideoEmbedPreview'
 
 export default {
   title: "Video Embed",

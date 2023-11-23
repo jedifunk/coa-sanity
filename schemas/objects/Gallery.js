@@ -1,4 +1,4 @@
-import galleryPreview from '../../previews/GalleryPreview'
+import galleryPreview from '../../components/preview/GalleryPreview'
 
 export default {
   title: "Image Gallery",

@@ -1,4 +1,4 @@
-import BreakPreview from '../../previews/BreakPreview'
+import BreakPreview from '../../components/preview/BreakPreview'
 
 export default {
   title: 'Break',

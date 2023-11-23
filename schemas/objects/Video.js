@@ -1,4 +1,4 @@
-import videoPreview from "../../previews/VideoPreview"
+import videoPreview from "../../components/preview/VideoPreview"
 
 export default {
   title: "Video",

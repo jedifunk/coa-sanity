@@ -1,4 +1,4 @@
-import MapPreview from '../../previews/MapPreview'
+import MapPreview from '../../components/preview/MapPreview'
 
 export default {
   title: "Google My Map",

@@ -1,4 +1,4 @@
-import embedPreview from '../../previews/EmbedPreview'
+import embedPreview from '../../components/preview/EmbedPreview'
 
 export default {
   title: "Embed",

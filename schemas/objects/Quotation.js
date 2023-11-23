@@ -1,4 +1,4 @@
-import Quotation from "../../previews/QuotePreview";
+import Quotation from "../../components/preview/QuotePreview";
 
 export default {
   title: 'Quotation',
