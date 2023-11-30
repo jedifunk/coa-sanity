@@ -37,16 +37,23 @@ const Geometry = (props) => {
       return;
     }
 
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
+    window.initMap = function() {
       if (isMounted.current) {
         autocompleteService.current = new window.google.maps.places.AutocompleteService()
         placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'))
       }
     }
+
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+    // script.onload = () => {
+    //   if (isMounted.current) {
+    //     autocompleteService.current = new window.google.maps.places.AutocompleteService()
+    //     placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'))
+    //   }
+    // }
     document.body.appendChild(script)
   }
 
