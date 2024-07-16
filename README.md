@@ -9,6 +9,7 @@ Plugins in use:
 - [x] Unsplash integration
 - [ ] IG embeds
 - [ ] Make Charts reuseable
-- [ ] Make Mapbox maps reuseable
+- [x] Make Mapbox maps reuseable
 - [x] YouTube & Vimeo embeds
 - [ ] Fix IG Embed preview error
+- [x] Countries as array for articles

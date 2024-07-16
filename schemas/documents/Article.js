@@ -55,18 +55,34 @@ export default {
       to: [{type: "author"}]
     },
     {
-      title: "City",
-      name: "city",
+      title: "Cities",
+      name: "cities",
       fieldset: "geo",
-      type: "reference",
-      to: [{type: "city"}]
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{type: "city"}]
+        }
+      ],
+      options: {
+        sortable: false
+      },
     },
     {
-      title: "Country",
-      name: "country",
+      title: "Countries",
+      name: "countries",
       fieldset: 'geo',
-      type: "reference",
-      to: [{type: "country"}]
+      type: 'array',
+      of: [
+        {
+          type: "reference",
+          to: [{type: "country"}]
+        }
+      ],
+      options: {
+        sortable: false
+      },
     },
     {
       title: "Categories",
