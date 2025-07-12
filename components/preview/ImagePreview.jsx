@@ -3,7 +3,7 @@ import React from 'react'
 import {useClient} from 'sanity'
 import urlBuilder from '@sanity/image-url'
 
-const client = useClient()
+const client = useClient({apiVersion:"2023-08-09"})
 const urlFor = source => urlBuilder(client).image(source)
 
 const imagePreview = ({ value }) => {

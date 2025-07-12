@@ -37,6 +37,8 @@ const Geometry = (props) => {
       return;
     }
 
+    if (document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]')) return;
+
     window.initMap = function() {
       if (isMounted.current) {
         autocompleteService.current = new window.google.maps.places.AutocompleteService()
@@ -45,15 +47,10 @@ const Geometry = (props) => {
     }
 
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GM_KEY}&libraries=places&callback=initMap&loading=async`;
     script.async = true;
     script.defer = true;
-    // script.onload = () => {
-    //   if (isMounted.current) {
-    //     autocompleteService.current = new window.google.maps.places.AutocompleteService()
-    //     placesService.current = new window.google.maps.places.PlacesService(document.createElement('div'))
-    //   }
-    // }
+
     document.body.appendChild(script)
   }
 
