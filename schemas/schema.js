@@ -25,6 +25,7 @@ import quotation from './objects/Quotation'
 import breaks from './objects/Breaks'
 import chart from './objects/Chart'
 import grid from './objects/ContentGrid'
+import snippets from './objects/Snippets'
 
 export default [
   globalConfig,
@@ -51,4 +52,5 @@ export default [
   breaks,
   chart,
   grid,
+  snippets,
 ]

@@ -87,6 +87,7 @@ export default {
         {type: "video"},
         {type: "chart"},
         {type: "quotation"},
+        {type: "snippets"},
       ]
     }
   ]
