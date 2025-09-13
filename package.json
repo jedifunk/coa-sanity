@@ -31,5 +31,9 @@
     "sanity-plugin-dashboard-widget-netlify": "^2.0.2",
     "sanity-plugin-media": "^4.0.0",
     "styled-components": "^6.1.19"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   }
 }

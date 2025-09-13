@@ -20,8 +20,8 @@ export default {
     select: {
       url: 'url',
     },
-    components: {
-      preview: videoEmbedPreview
-    }
+  },
+  components: {
+    preview: videoEmbedPreview
   }
 }
