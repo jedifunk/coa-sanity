@@ -1,5 +1,5 @@
 import {defineConfig, isDev} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import schemas from './schemas/schema'
 import deskStructure from './structure'
 import {dashboardTool, projectUsersWidget, projectInfoWidget} from '@sanity/dashboard'
@@ -16,7 +16,7 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID,
   dataset: process.env.SANITY_STUDIO_DATASET,
   plugins: [
-    deskTool({structure: deskStructure}),
+    structureTool({structure: deskStructure}),
     media(),
     unsplashImageAsset(),
     dashboardTool({
