@@ -13,26 +13,61 @@ const Geometry = (props) => {
     fetchCoordinates(placeId)
   }, [])
 
-  const handleChange = useCallback((place) => {
-    if (place) {
-      const sw = [place.viewport.low.longitude, place.viewport.low.latitude]
-      const ne = [place.viewport.high.longitude, place.viewport.high.latitude]
+  // const handleChange = useCallback((place) => {
+  //   if (place) {
+  //     const sw = [place.viewport.low.longitude, place.viewport.low.latitude]
+  //     const ne = [place.viewport.high.longitude, place.viewport.high.latitude]
 
-      onChange(set({
-        _type: 'geopoint',
-        geoName: place.displayName.text, 
-        latitude: place.location.latitude, 
-        longitude: place.location.longitude,
-        mapBounds: {
-          _type: 'mapBounds',
-          southwest: sw,
-          northeast: ne,
-        }
-      }));
-    } else {
-      onChange(unset());
+  //     onChange(set({
+  //       _type: 'geopoint',
+  //       geoName: place.displayName.text, 
+  //       latitude: place.location.latitude, 
+  //       longitude: place.location.longitude,
+  //       mapBounds: {
+  //         _type: 'mapBounds',
+  //         southwest: sw,
+  //         northeast: ne,
+  //       }
+  //     }));
+  //   } else {
+  //     onChange(unset());
+  //   }
+  // }, [onChange])
+  const handleChange = useCallback((place) => {
+    if (!place) {
+      onChange(unset())
+      return
     }
-  }, [onChange])
+
+    const newValue = {
+      _type: 'geopoint',
+      geoName: place.displayName?.text || '', 
+      latitude: place.location?.latitude ?? null, 
+      longitude: place.location?.longitude ?? null,
+      mapBounds: {
+        _type: 'mapBounds',
+        southwest: [
+          place.viewport?.low?.longitude ?? null,
+          place.viewport?.low?.latitude ?? null,
+        ],
+        northeast: [
+          place.viewport?.high?.longitude ?? null,
+          place.viewport?.high?.latitude ?? null,
+        ],
+      },
+    }
+
+    // only update if changed
+    if (
+      newValue.geoName !== value?.geoName ||
+      newValue.latitude !== value?.latitude ||
+      newValue.longitude !== value?.longitude
+    ) {
+      onChange(set(newValue))
+    }
+  }, [onChange, value])
+
+
 
   const handleSearch = async (query) => {
     if (!query) {
@@ -106,7 +141,8 @@ const Geometry = (props) => {
             options={predictions}
             filterOption={() => true}
             onQueryChange={handleSearch}
-            value={value?.geoName} 
+            // value={value?.geoName} 
+            value={value?.geoName || ''}
             onSelect={handleSelect}
             renderOption={(option) => (
               <Card as="button" padding={3}>
